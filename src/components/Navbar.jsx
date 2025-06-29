@@ -1,0 +1,43 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/services", label: "Services" },
+  { to: "/contact", label: "Contact" },
+  { to: "/testimonials", label: "Testimonials" },
+];
+
+const Navbar = () => {
+  return (
+    <nav className="bg-blue-900 shadow-lg sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-yellow-400 tracking-tight font-serif">
+          Beyond Career
+        </h1>
+        <ul className="flex gap-8 text-white font-semibold">
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <NavLink
+                to={link.to}
+                className={({ isActive }) =>
+                  `transition-colors duration-200 px-4 py-2 rounded ${
+                    isActive
+                      ? "bg-yellow-400 text-blue-900 shadow font-bold"
+                      : "hover:bg-blue-800 hover:text-yellow-300"
+                  }`
+                }
+                end={link.to === "/"}
+              >
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
