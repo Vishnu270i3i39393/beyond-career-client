@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import { FaRocket } from "react-icons/fa";
 import AOS from "aos";
@@ -29,13 +30,13 @@ const Home = () => {
         >
           Empowering students to reach their dream careers.
         </p>
-        <a
-          href="/services"
+        <Link
+          to="/services"
           className="inline-block bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-full shadow transition duration-200"
           data-aos="zoom-in-up"
         >
           Explore Our Services
-        </a>
+        </Link>
       </div>
     </div>
   );
